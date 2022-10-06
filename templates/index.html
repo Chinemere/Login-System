@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Home {% endblock %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+<h1> Welcome to our Compnay</h1>
+<h4>Dear  <em style="color: orange;"> {{ current_user }} </em>Go ahead and enjoy our products and services.
+    Navigate your way arround and have a nice experience
+</h4>
+{% else %}
+
+
+<h1> Welcome to our Compnay</h1>
+<h2>Before you can proceed, you need to create an account <a href="{{url_for('register')}}">Here</a> but if you already have an account with us, simply  <a href="{{url_for('login')}}">login</a></h2>
+{% endif %}
+{% endblock %}
